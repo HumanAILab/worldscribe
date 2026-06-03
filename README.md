@@ -1,5 +1,10 @@
 # WorldScribe
 
+> ⚠️ **Work in progress — under construction.** This repository is still being
+> developed and is **not yet ready for use**. The code, setup instructions, and
+> documentation are incomplete and may change or break at any time. Use at your own
+> risk.
+
 WorldScribe is a system that generates **live, context-aware visual descriptions** of
 a user's surroundings in real time. A smartphone streams the camera feed to a local
 machine, where frames are processed with object detection and vision-language models
