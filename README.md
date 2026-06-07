@@ -61,10 +61,15 @@ visual environment on the go.
    - `OPENAI_API_KEY` — your OpenAI API key
    - `AZURE_SPEECH_KEY` / `AZURE_SPEECH_REGION` — your Azure Speech credentials
    - `SERVER_IP` — IP of the machine running the visual server
+   - `FIREBASE_CREDENTIALS` — path to your Firebase Admin SDK service-account JSON
+   - `FIREBASE_DATABASE_URL` — your Firebase Realtime Database URL
 
 3. Firebase credentials. Download your own Firebase Admin SDK service-account JSON
-   from the Firebase console and place it in the project root. Point the code/config
-   at this file. It is gitignored and **must never be committed**.
+   from the Firebase console and place it in the project root, then set
+   `FIREBASE_CREDENTIALS` and `FIREBASE_DATABASE_URL` in `.env`. The JSON file is
+   gitignored and **must never be committed**. All Firebase identifiers are read from
+   the environment via `utils/env_config.py` — no project names, file names, or URLs
+   are hardcoded in the source.
 
 4. Server config. Set the server IP/port in `config/config_server.py` (or via the
    `SERVER_IP` environment variable).

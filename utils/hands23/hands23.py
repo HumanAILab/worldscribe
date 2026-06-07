@@ -18,10 +18,11 @@ from detectron2.config import get_cfg
 from detectron2.engine import DefaultPredictor
 
 import firebase_admin
+from utils.env_config import FIREBASE_CREDENTIALS, FIREBASE_DATABASE_URL
 if not firebase_admin._apps:
-    cred = credentials.Certificate('soundcaption-a6e7d-firebase-adminsdk-mwgfx-7e8cba13f0.json')
+    cred = credentials.Certificate(FIREBASE_CREDENTIALS)
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://soundcaption-a6e7d-default-rtdb.firebaseio.com/'
+        'databaseURL': FIREBASE_DATABASE_URL
     })
 
 from utils.hands23.hodetector.data import register_ho_pascal_voc, hoMapper
